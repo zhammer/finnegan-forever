@@ -17,6 +17,8 @@ class ScrollGateway:
 
     def __init__(self, filename):
         """C'tor"""
+        if not os.path.isfile(filename):
+            raise FileNotFoundError('Scroll file "%s" not found.', filename)
         self._filename = filename
 
 

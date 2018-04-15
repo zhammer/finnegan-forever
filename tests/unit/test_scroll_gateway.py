@@ -1,11 +1,32 @@
 """Test module for the scroll gateway."""
 
 import tempfile
+from unittest.mock import patch
 import pytest
 from finnegan_forever.gateways.scroll_gateway import ScrollGateway
 
 class TestScrollGateway:
     """Test suite for the scroll gateway."""
+
+    def test_init_file_doesnt_exist(self):
+        """ScrollGateway should raise a FileNotFound error if the scroll file doesnt exist."""
+        # Given
+        with patch('finnegan_forever.gateways.scroll_gateway.os.path') as mock_os_path:
+            mock_os_path.isfile.return_value = False
+
+            # When / Then
+            with pytest.raises(FileNotFoundError):
+                scroll = ScrollGateway('filename.txt')
+
+    def test_init_file_exists(self):
+        """ScrollGateway should raise a FileNotFound error if the scroll file doesnt exist."""
+        # Given
+        with patch('finnegan_forever.gateways.scroll_gateway.os.path') as mock_os_path:
+            mock_os_path.isfile.return_value = True
+
+            # When / Then
+            scroll = ScrollGateway('filename.txt')
+
 
     @pytest.mark.parametrize('text', [
         pytest.lazy_fixture('a_field_of_cotton'),
