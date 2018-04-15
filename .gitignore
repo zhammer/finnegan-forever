@@ -19,6 +19,7 @@ __pycache__
 .cache
 .pytest_cache/
 venv/
+.coverage
 
 # Serverless directories
 .serverless
