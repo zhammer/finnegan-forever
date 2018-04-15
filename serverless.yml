@@ -47,11 +47,22 @@ provider:
 
 package:
   include:
+    - finnegans-wake-scroll.txt
     - finnegan_forever/**
 
 functions:
   read-finnegan:
     handler: finnegan_forever/delivery/aws/read_finnegan.handler
+    environment:
+      PASSAGE_SIZE: 40
+      WINDOW_LENGTH: 4
+      FINNEGAN_SCROLL_FILEPATH: finnegans-wake-scroll.txt
+    events:
+      - http:
+          path: /passage
+          method: get
+          cors: true
+
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
