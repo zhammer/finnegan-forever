@@ -4,7 +4,7 @@ import json
 import logging
 import time
 import os
-from finnegan_forever.gateways.ascii_scroll import AsciiScrollGateway
+from finnegan_forever.gateways.unicode_scroll import UnicodeScrollGateway
 from finnegan_forever.read_current_passage import read_current_passage
 
 def handler(event, context):
@@ -16,7 +16,7 @@ def handler(event, context):
     passage_size = int(os.environ['PASSAGE_SIZE'])
     window_length = int(os.environ['WINDOW_LENGTH'])
 
-    finnegan_scroll = AsciiScrollGateway(finnegan_scroll_filepath)
+    finnegan_scroll = UnicodeScrollGateway(finnegan_scroll_filepath)
 
     try:
         passage = read_current_passage(
