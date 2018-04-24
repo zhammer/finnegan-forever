@@ -1,0 +1,52 @@
+openapi: 3.0.0
+servers:
+  - url: 'https://drsvfxtdvi.execute-api.us-east-1.amazonaws.com/dev'
+info:
+  description: >
+    A simple webservice that reads Finnegan's Wake in fixed-length passages,
+    reading a new passage every `reading_every` seconds, forever.
+
+
+    ### "Yet how lamely hobbles the hoy of his then pseudo-jocax axplanation
+    how, according to his own story, he vas a process server and was merely
+    trying to open zozimus a bottlop stoub by mortially hammering his magnum
+    bonum..."
+  version: "1.0.0-oas3"
+  title: Finnegan Forever
+  contact:
+    email: zach.the.hammer@gmail.com
+  license:
+    name: MIT License
+    url: 'https://opensource.org/licenses/MIT'
+tags:
+  - name: Use cases
+paths:
+  /passage:
+    get:
+      tags:
+        - Use cases
+      summary: Read the current passage of Finnegan's Wake
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Passage'
+externalDocs:
+  description: Visit the github page
+  url: 'https://github.com/zhammer/finnegan-forever'
+components:
+  schemas:
+    Passage:
+      type: object
+      properties:
+        passage:
+          type: string
+          description: The current passage of Finnegan's Wake.
+        reading_every:
+          type: integer
+          description: The number of seconds for which each passage is read.
+      example:
+        passage: riverrun, past Eve and Adam’s, from swer
+        reading_every: 4
