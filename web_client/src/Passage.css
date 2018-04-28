@@ -1,12 +1,20 @@
-.grid {
-    display: grid;
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
+
+.container {
     height: 100vh;
     width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .text {
-  font-size: 4vw;
-  font: monaco;
-  justify-self: center;
-  align-self: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5vw;
+}
+
+@media screen and (min-width: 960px) {
+  .text {
+    font-size: 48px;
+  }
 }

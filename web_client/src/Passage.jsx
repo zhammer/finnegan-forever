@@ -23,10 +23,10 @@ class Passage extends Component {
     }
     render() {
         return (
-            <div className="grid">
+            <div className="container">
               <div className="text">{this.state.passageText}</div>
             </div>
-        )
+        );
     }
 }
 
