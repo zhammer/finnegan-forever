@@ -21,3 +21,11 @@ functions:
           path: /passage
           method: get
           cors: true
+
+plugins:
+  - serverless-finch
+
+custom:
+  client:
+    bucketName: finneganforever.com
+    distributionFolder: web_client/build
