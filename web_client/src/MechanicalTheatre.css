@@ -1,0 +1,31 @@
+.stage {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 25% 1fr 25%;
+    grid-template-columns: 1fr;
+    grid-template-areas: "clouds"
+                         "content"
+                         "waves";
+}
+
+.clouds {
+    grid-area: clouds;
+    max-height: 100%;
+}
+
+.content {
+    grid-area: content;
+}
+
+.waves {
+    grid-area: waves;
+    display: grid;
+    align-content: end;
+    max-height: 100%;
+}
+
+.picture {
+    width: 100%;
+    max-height: 100%;
+}
