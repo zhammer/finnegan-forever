@@ -29,3 +29,8 @@ custom:
   client:
     bucketName: finneganforever.com
     distributionFolder: web_client/build
+    routingRules:
+      - redirect:
+          replaceKeyWith: '#!' # Cannot replace with an empty string
+        condition:
+          httpErrorCodeReturnedEquals: 404
