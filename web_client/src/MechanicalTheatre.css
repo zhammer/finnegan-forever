@@ -1,4 +1,5 @@
 .stage {
+    overflow-x: hidden;
     height: 100%;
     width: 100%;
     display: grid;
@@ -12,6 +13,24 @@
 .clouds {
     grid-area: clouds;
     max-height: 100%;
+    display: grid;
+    grid-template-areas: "cloud";
+    width: 120%;
+    justify-self: center;
+}
+
+.cloudLeft {
+    grid-area: cloud;
+    position: relative;
+    x-transition: all 1s ease-in-out;
+    animation: cloudLeftAni 20s infinite;
+}
+
+.cloudRight {
+    grid-area: cloud;
+    position: relative;
+    x-transition: all 1s ease-in-out;
+    animation: cloudRightAni 20s infinite;
 }
 
 .content {
@@ -22,10 +41,53 @@
     grid-area: waves;
     display: grid;
     align-content: end;
+    justify-self: center;
     max-height: 100%;
+    width: 120%;
+    position: relative;
+    x-transition: all 1s ease-in-out;
+    animation: wavesAni 10s infinite;
+    overflow: hidden;
+
 }
 
 .picture {
     width: 100%;
     max-height: 100%;
+}
+
+@keyframes cloudRightAni {
+    0% {
+        left: -3%;
+    }
+    50% {
+        left: -5%;
+    }
+    100% {
+        left: -3%;
+    }
+}
+
+@keyframes cloudLeftAni {
+    0% {
+        left: -1%;
+    }
+    50% {
+        left: 1%;
+    }
+    100% {
+        left: -1%;
+    }
+}
+
+@keyframes wavesAni {
+  0% {
+    left: -25px;
+  }
+  50% {
+    left: 25px;
+  }
+  100% {
+      left: -25px;
+  }
 }

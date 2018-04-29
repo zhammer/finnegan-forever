@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import clouds from './assets/clouds.png';
+import cloudLeft from './assets/cloud-left.png';
+import cloudRight from './assets/cloud-right.png';
 import waves from './assets/waves.png';
 import './MechanicalTheatre.css';
 
@@ -8,7 +9,13 @@ class MechanicalTheatre extends Component {
         return (
             <div className="stage">
               <div className="clouds">
-                <img className="picture" src={clouds} alt=""/>
+                <div className="cloudRight">
+                  <img className="picture" src={cloudRight} alt=""/>
+                </div>
+                <div className="cloudLeft">
+                  <img className="picture" src={cloudLeft} alt=""/>
+                </div>
+
               </div>
               <div className="content">
                 {this.props.children}
