@@ -25,7 +25,7 @@ const withTextIntervalReader = (WrappedComponent, readTextInterval) => (
             readTextInterval()
                 .then(this.onFirstTextIntervalRead.bind(this));
         }
-        componentDidUnmount() {
+        componentWillUnmount() {
             clearInterval(this.intervalId);
         }
         render = () => (
