@@ -1,38 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Passage.css';
 
-class Passage extends Component {
-    state = {
-        text: '',
-    }
-    componentDidMount() {
-        this.props.readPassage()
-            .then(({ text, readingEvery }) => {
-                this.setState({text: text});
-                setInterval(
-                    () => {
-                        this.props.readPassage().then(
-                            ({ text }) => {
-                                this.setState({text: text});
-                            }
-                        );
-                    },
-                    readingEvery * 1000
-                );
-            });
-    }
-    render() {
-        return (
-            <div className="container">
-              <div className="text">{this.state.text}</div>
-            </div>
-        );
-    }
-}
+const Passage = ({ text }) => (
+    <div className="container">
+      <div className="text">{text}</div>
+    </div>
+);
 
 Passage.propTypes = {
-    readingEvery: PropTypes.function
+    text: PropTypes.string
 };
 
 export default Passage;
