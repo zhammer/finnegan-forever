@@ -4,6 +4,10 @@ import cloudRight from './assets/cloud-right.png';
 import waves from './assets/waves.png';
 import './MechanicalTheatre.css';
 
+/**
+ *  A responsive Mechanical Theatre, inspired by the Victoria and Albert Museum's '18th-century
+ *  Mechanical Theatre' display. Children are rendered beneath the clouds and above the waves.
+ */
 const MechanicalTheatre = ({ children }) => (
     <div className="stage">
       <div className="clouds">
