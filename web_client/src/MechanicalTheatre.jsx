@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cloudLeft from './assets/cloud-left.png';
 import cloudRight from './assets/cloud-right.png';
 import waves from './assets/waves.png';

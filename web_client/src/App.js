@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MechanicalTheatre from './MechanicalTheatre';
 import Passage from './Passage';
 import readFinneganPassage from './api';
