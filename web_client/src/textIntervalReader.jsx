@@ -12,18 +12,18 @@ const withTextIntervalReader = (WrappedComponent, readTextInterval) => (
         state = {
             text: ''
         }
-        onTextIntervalRead({ text }) {
-            this.setState({text});
+        onTextIntervalRead = ({ text }) => {
+            this.setState({ text });
         }
-        onFirstTextIntervalRead({ text, readingEvery }) {
+        onFirstTextIntervalRead = ({ text, readingEvery }) => {
             this.intervalId = setInterval(() => {
-                readTextInterval().then(this.onTextIntervalRead.bind(this));
+                readTextInterval().then(this.onTextIntervalRead);
             }, readingEvery * 1000);
             this.onTextIntervalRead({text});
         }
         componentDidMount() {
             readTextInterval()
-                .then(this.onFirstTextIntervalRead.bind(this));
+                .then(this.onFirstTextIntervalRead);
         }
         componentWillUnmount() {
             clearInterval(this.intervalId);
