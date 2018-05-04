@@ -14,7 +14,7 @@ def handler(event, context):
 
     finnegan_scroll_filepath = os.environ['FINNEGAN_SCROLL_FILEPATH']
     passage_size = int(os.environ['PASSAGE_SIZE'])
-    window_length = int(os.environ['WINDOW_LENGTH'])
+    reading_every = int(os.environ['READING_EVERY'])
 
     finnegan_scroll = UnicodeScrollGateway(finnegan_scroll_filepath)
 
@@ -22,7 +22,7 @@ def handler(event, context):
         passage = read_current_passage(
             scroll=finnegan_scroll,
             passage_size=passage_size,
-            window_length=window_length,
+            reading_every=reading_every,
             seconds=int(time.time())
         )
     except Exception as e:
@@ -31,7 +31,7 @@ def handler(event, context):
 
     body = {
         'passage': passage,
-        'reading_every': window_length
+        'reading_every': reading_every
     }
 
     return {

@@ -21,11 +21,11 @@ class TestReadCurrentPassage:
         # Given
         scroll = InMemoryScrollGateway(text)
         passage_size = size
-        window_length = 4
+        reading_every = 4
         seconds = 0
 
         # When
-        passage = read_current_passage(scroll, passage_size, window_length, seconds)
+        passage = read_current_passage(scroll, passage_size, reading_every, seconds)
 
         # Then
         expected = text[0:passage_size]
