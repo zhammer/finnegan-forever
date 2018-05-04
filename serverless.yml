@@ -14,7 +14,7 @@ functions:
     handler: finnegan_forever/delivery/aws/read_finnegan.handler
     environment:
       PASSAGE_SIZE: 40
-      READING_EVERY: 4.5
+      READING_EVERY: 4.25
       FINNEGAN_SCROLL_FILEPATH: finnegans-wake-scroll.txt
     events:
       - http:
