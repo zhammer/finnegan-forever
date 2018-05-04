@@ -14,7 +14,7 @@ def handler(event, context):
 
     finnegan_scroll_filepath = os.environ['FINNEGAN_SCROLL_FILEPATH']
     passage_size = int(os.environ['PASSAGE_SIZE'])
-    reading_every = int(os.environ['READING_EVERY'])
+    reading_every = float(os.environ['READING_EVERY'])
 
     finnegan_scroll = UnicodeScrollGateway(finnegan_scroll_filepath)
 

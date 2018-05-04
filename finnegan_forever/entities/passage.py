@@ -38,5 +38,5 @@ def current_passage_offset(scroll_size, passage_size, reading_every, seconds):
     """
     num_passages_in_scroll = math.ceil(scroll_size / passage_size)
     windows_elapsed = seconds // reading_every
-    current_passage_number = windows_elapsed % num_passages_in_scroll
+    current_passage_number = int(windows_elapsed % num_passages_in_scroll)
     return current_passage_number * passage_size
