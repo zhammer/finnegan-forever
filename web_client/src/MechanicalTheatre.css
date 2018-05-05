@@ -82,12 +82,12 @@
 
 @keyframes wavesAni {
   0% {
-    left: -25px;
+    left: -50px;
   }
   50% {
-    left: 25px;
+    left: -0px;
   }
   100% {
-      left: -25px;
+      left: -50px;
   }
 }
