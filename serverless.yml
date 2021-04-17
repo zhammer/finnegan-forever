@@ -1,3 +1,4 @@
+# once netlify supports python functions, make this all netlify
 service: finnegan-forever
 
 provider:
