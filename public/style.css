@@ -1,0 +1,137 @@
+body {
+    font-family: 'Cormorant Garamond', serif;
+    margin: 0;
+}
+
+.centered {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    font-size: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
+
+@media screen and (min-width: 960px) {
+    .centered {
+        font-size: 48px;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadein {
+    animation: fadein 250ms ease-in both;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeout {
+    animation: fadeout 250ms ease-in both;
+}
+
+.clouds {
+    width: 120%;
+    height: 25%;
+    position: fixed;
+    top: 0;
+    left: -10%;
+}
+
+.cloud-left {
+    animation: cloud-left 20s infinite;
+}
+
+.cloud-right {
+    animation: cloud-right 20s infinite;
+}
+
+.stacked {
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.stacked>* {
+    position: absolute;
+    top: 0;
+}
+
+.waves {
+    position: fixed;
+    height: 25%;
+    bottom: 0;
+    width: 120%;
+    left: -10%;
+    animation: waves 10s infinite;
+}
+
+.waves>img {
+    position: absolute;
+    bottom: 0;
+}
+
+img {
+    max-height: 100%;
+    width: 100%;
+}
+
+.screenreader {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+@keyframes cloud-right {
+    0% {
+        transform: translateX(-3%);
+    }
+    50% {
+        transform: translateX(-6%);
+    }
+    100% {
+        transform: translateX(-3%);
+    }
+}
+
+@keyframes cloud-left {
+    0% {
+        transform: translateX(-2%);
+    }
+    50% {
+        transform: translateX(2%);
+    }
+    100% {
+        transform: translateX(-2%);
+    }
+}
+
+@keyframes waves {
+    0% {
+        transform: translateX(-5%);
+    }
+    50% {
+        transform: translateX(5%);
+    }
+    100% {
+        transform: translateX(-5%);
+    }
+}
