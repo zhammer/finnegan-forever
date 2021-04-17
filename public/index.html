@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Finnegan Forever</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/fw.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="clouds" aria-hidden="true">
+        <div class="stacked">
+            <img class="cloud cloud-right" src="/cloud-right.png" />
+            <img class="cloud cloud-left" src="/cloud-left.png" />
+        </div>
+    </div>
+
+    <!-- A screenreader only note to set the scene for those using a screenreader -->
+    <p id="screenreader-explanation" class="screenreader"></p>
+
+    <!-- This is where our passages will be displayed as they're fetched from the server. -->
+    <p class="centered fadeout" id="previous" aria-hidden="true" />
+    <p class="centered fadein" id="current" aria-live="polite" />
+
+    <div class="waves" aria-hidden="true">
+        <img src="/waves.png" aria-hidden="true" />
+    </div>
+</body>
+
+</html>
