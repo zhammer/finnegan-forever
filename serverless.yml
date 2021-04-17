@@ -21,16 +21,3 @@ functions:
           path: /passage
           method: get
           cors: true
-
-plugins:
-  - serverless-finch
-
-custom:
-  client:
-    bucketName: finneganforever.com
-    distributionFolder: web_client/build
-    routingRules:
-      - redirect:
-          replaceKeyWith: '#!' # Cannot replace with an empty string
-        condition:
-          httpErrorCodeReturnedEquals: 404
